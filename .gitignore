@@ -1,0 +1,27 @@
+# === macOS ===
+.DS_Store
+
+# === Xcode (user-specific) ===
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# === Build output ===
+DerivedData/
+build/
+*.o
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# === Swift Package Manager ===
+.swiftpm/
+.build/
+
+# === XcodeGen ===
+# project.yml が唯一の真実。以下は生成物なのでコミットしない。
+# （クローン後は `xcodegen generate` で再生成する）
+*.xcodeproj/
+Sash/Info.plist

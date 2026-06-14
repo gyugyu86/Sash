@@ -1,0 +1,62 @@
+# Sash — XcodeGen project definition.
+# このファイルが唯一の真実（single source of truth）。生成される .xcodeproj は gitignore する。
+# 生成: `xcodegen generate` → Xcode で開いて Signing チームを選択 → ⌘R。
+name: Sash
+
+options:
+  developmentLanguage: en          # 開発基準言語は英語。ユーザー向け文字列は String Catalog 管理。
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+  generateEmptyDirectories: true
+
+packages:
+  KeyboardShortcuts:
+    url: https://github.com/sindresorhus/KeyboardShortcuts
+    from: "2.0.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"           # 同梱コードは Swift 5。Swift 6 の厳格並行性は段階導入とする。
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic      # 署名チームは Xcode 側で各自選択（人間ゲート）。
+    SWIFT_EMIT_LOC_STRINGS: "YES"   # Text()/String(localized:) を String Catalog へ抽出。
+
+targets:
+  Sash:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sash
+    dependencies:
+      - package: KeyboardShortcuts
+    info:
+      path: Sash/Info.plist          # XcodeGen が生成（gitignore 済み）。
+      properties:
+        LSUIElement: true            # メニューバー常駐・Dock アイコンなし。
+        LSApplicationCategoryType: public.app-category.productivity
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.gyugyu86.Sash
+        PRODUCT_NAME: Sash
+        ENABLE_TESTABILITY: "YES"    # @testable import Sash を可能にする。
+        # App Sandbox は付けない（他アプリの AX 操作に必須）。entitlements も付与しない。
+    scheme:
+      testTargets:
+        - SashTests
+
+  SashTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests
+    dependencies:
+      - target: Sash
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.gyugyu86.SashTests
+        SWIFT_EMIT_LOC_STRINGS: "NO"
