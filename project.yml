@@ -44,6 +44,15 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: io.github.gyugyu86.Sash
         PRODUCT_NAME: Sash
         ENABLE_TESTABILITY: "YES"    # @testable import Sash を可能にする。
+        # 署名: 自動署名 + 開発チームを明示。これが無いとアドホック署名(-)になり、
+        # アクセシビリティ許可が定着せず毎回プロンプトが出る（AX 系アプリ必須）。
+        # project.yml に書くことで `xcodegen generate` してもチーム設定が消えない。
+        # ※ Team ID は秘密情報ではない（配布アプリの署名に常に含まれる）。
+        #   公開リポジトリでコントリビュータに各自のチームを使わせたい場合は、
+        #   Release フェーズで local xcconfig へ外出しする。
+        DEVELOPMENT_TEAM: "28T2JHJF87"   # Apple Development: INGYU EUM
+        # debug dylib 方式は AX 許可の定着を妨げることがあるため無効化（Xcode 16+）。
+        ENABLE_DEBUG_DYLIB: "NO"
         # App Sandbox は付けない（他アプリの AX 操作に必須）。entitlements も付与しない。
     scheme:
       testTargets:
