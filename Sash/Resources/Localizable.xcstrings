@@ -51,6 +51,36 @@
         }
       }
     },
+    "Cycle" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サイクル"
+          }
+        }
+      }
+    },
+    "Cycle width when pressing the same key" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "同じキーの連打で幅を循環"
+          }
+        }
+      }
+    },
+    "Pressing the same left/right key again steps the width: 1/2 → 2/3 → 1/3." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "左/右キーを連打すると幅が 1/2 → 2/3 → 1/3 と循環します。"
+          }
+        }
+      }
+    },
     "Gaps" : {
       "localizations" : {
         "ja" : {

@@ -1,10 +1,11 @@
 import SwiftUI
 
-/// 一般設定: ログイン時起動 / アクセシビリティ権限の状態表示 / ギャップ（余白）。
+/// 一般設定: ログイン時起動 / アクセシビリティ権限 / ギャップ（余白）/ 連続サイクル。
 struct GeneralSettingsView: View {
     @State private var launchAtLogin = LoginItem.isEnabled
     @State private var hasPermission = PermissionsManager.shared.isTrusted
-    @AppStorage("gap") private var gap: Double = 0   // Preferences.gap と同じ UserDefaults キー
+    @AppStorage("gap") private var gap: Double = 0              // Preferences.gap と同じ UserDefaults キー
+    @AppStorage("cycleEnabled") private var cycleEnabled = true // Preferences.cycleEnabled と同じキー
 
     var body: some View {
         Form {
@@ -42,6 +43,13 @@ struct GeneralSettingsView: View {
                         .frame(width: 44, alignment: .trailing)
                 }
                 Text("Space between windows and screen edges when placing.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+
+            Section("Cycle") {
+                Toggle("Cycle width when pressing the same key", isOn: $cycleEnabled)
+                Text("Pressing the same left/right key again steps the width: 1/2 → 2/3 → 1/3.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }

@@ -43,21 +43,30 @@ final class WindowManager {
             break
         }
 
+        // 連続サイクル: cycleEnabled なら、直前アクション+時刻から実際に適用するアクションを決める
+        // （同じ半分キー連打で 1/2 → 2/3 → 1/3）
+        var resolved = action
+        if Preferences.shared.cycleEnabled, let id {
+            resolved = CycleSequencer.cycledAction(for: action,
+                                                   last: PlacementHistory.shared.lastAction(for: id),
+                                                   now: Date())
+        }
+
         // 幾何配置: 現在のディスプレイの visibleFrame を基準に目標矩形を求める
         let primaryH = ScreenGeometry.primaryHeight()
         let currentCocoa = ScreenGeometry.flipY(currentQuartz, primaryHeight: primaryH)
         let screen = ScreenGeometry.screen(containingCocoa: currentCocoa) ?? NSScreen.main
         guard let visible = screen?.visibleFrame,
-              let targetCocoa = action.targetFrame(visibleFrame: visible,
-                                                   gap: CGFloat(Preferences.shared.gap)) else { return }
+              let targetCocoa = resolved.targetFrame(visibleFrame: visible,
+                                                     gap: CGFloat(Preferences.shared.gap)) else { return }
         let targetQuartz = ScreenGeometry.flipY(targetCocoa, primaryHeight: primaryH)
 
-        // 配置前フレームを記録 → 適用 → 実際に適用されたフレームを記録（Restore 用）
+        // 配置前フレームを記録 → 適用 → 実際に適用されたフレーム+アクションを記録（Restore/サイクル用）
         if let id { PlacementHistory.shared.recordBeforePlacement(currentFrame: currentQuartz, for: id) }
         setFrame(targetQuartz, for: window)
         if let id {
             let applied = frame(of: window) ?? targetQuartz
-            PlacementHistory.shared.recordApplied(frame: applied, for: id)
+            PlacementHistory.shared.recordApplied(frame: applied, action: resolved, for: id)
         }
     }
 
