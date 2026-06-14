@@ -29,7 +29,7 @@ final class WindowManager {
         guard let visible = screen?.visibleFrame else { return }
 
         // 目標矩形（Cocoa）→ Quartz に戻して適用
-        let targetCocoa = action.targetFrame(visibleFrame: visible, currentSize: currentCocoa.size)
+        let targetCocoa = action.targetFrame(visibleFrame: visible)
         let targetQuartz = ScreenGeometry.flipY(targetCocoa, primaryHeight: primaryH)
         setFrame(targetQuartz, for: window)
     }

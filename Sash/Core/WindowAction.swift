@@ -11,7 +11,7 @@ enum WindowAction: String, CaseIterable, Identifiable {
     case topLeft, topRight, bottomLeft, bottomRight
     case leftThird, centerThird, rightThird
     case leftTwoThirds, rightTwoThirds
-    case maximize, center
+    case maximize
 
     var id: String { rawValue }
 
@@ -33,7 +33,6 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .leftTwoThirds:  return String(localized: "Left Two Thirds")
         case .rightTwoThirds: return String(localized: "Right Two Thirds")
         case .maximize:       return String(localized: "Maximize")
-        case .center:         return String(localized: "Center")
         }
     }
 
@@ -45,16 +44,13 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .topHalf:     return "rectangle.tophalf.inset.filled"
         case .bottomHalf:  return "rectangle.bottomhalf.inset.filled"
         case .maximize:    return "rectangle.inset.filled"
-        case .center:      return "rectangle.center.inset.filled"
         default:           return "square.split.2x2"
         }
     }
 
     /// 配置先の矩形を返す（Cocoa 座標）。
-    /// - Parameters:
-    ///   - v: 対象スクリーンの visibleFrame（メニューバー・Dock を除いた領域）
-    ///   - currentSize: 現在のウインドウサイズ（center で使用）
-    func targetFrame(visibleFrame v: CGRect, currentSize: CGSize) -> CGRect {
+    /// - Parameter v: 対象スクリーンの visibleFrame（メニューバー・Dock を除いた領域）
+    func targetFrame(visibleFrame v: CGRect) -> CGRect {
         let w = v.width, h = v.height
         switch self {
         case .leftHalf:       return CGRect(x: v.minX,          y: v.minY,       width: w/2,   height: h)
@@ -71,11 +67,6 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .leftTwoThirds:  return CGRect(x: v.minX,          y: v.minY,       width: 2*w/3, height: h)
         case .rightTwoThirds: return CGRect(x: v.minX + w/3,    y: v.minY,       width: 2*w/3, height: h)
         case .maximize:       return v
-        case .center:
-            return CGRect(x: v.midX - currentSize.width/2,
-                          y: v.midY - currentSize.height/2,
-                          width: currentSize.width,
-                          height: currentSize.height)
         }
     }
 }

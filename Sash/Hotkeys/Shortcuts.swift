@@ -17,7 +17,6 @@ extension KeyboardShortcuts.Name {
     static let leftTwoThirds  = Self("leftTwoThirds",  default: .init(.e, modifiers: [.control, .option]))
     static let rightTwoThirds = Self("rightTwoThirds", default: .init(.t, modifiers: [.control, .option]))
     static let maximize       = Self("maximize",       default: .init(.return, modifiers: [.control, .option]))
-    static let center         = Self("center",         default: .init(.c, modifiers: [.control, .option]))
 }
 
 /// ショートカット名 ↔ アクションの対応表。設定画面の一覧にもこれを使う。
@@ -43,7 +42,6 @@ enum Shortcuts {
         .init(name: .leftTwoThirds,  action: .leftTwoThirds),
         .init(name: .rightTwoThirds, action: .rightTwoThirds),
         .init(name: .maximize,       action: .maximize),
-        .init(name: .center,         action: .center),
     ]
 
     /// 起動時に全ショートカットを登録

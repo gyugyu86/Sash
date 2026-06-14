@@ -41,16 +41,6 @@
         }
       }
     },
-    "Center" : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "中央寄せ"
-          }
-        }
-      }
-    },
     "Center Third" : {
       "localizations" : {
         "ja" : {
