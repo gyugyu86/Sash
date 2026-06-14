@@ -1,9 +1,10 @@
 import SwiftUI
 
-/// 一般設定: ログイン時起動トグルと、アクセシビリティ権限の状態表示。
+/// 一般設定: ログイン時起動 / アクセシビリティ権限の状態表示 / ギャップ（余白）。
 struct GeneralSettingsView: View {
     @State private var launchAtLogin = LoginItem.isEnabled
     @State private var hasPermission = PermissionsManager.shared.isTrusted
+    @AppStorage("gap") private var gap: Double = 0   // Preferences.gap と同じ UserDefaults キー
 
     var body: some View {
         Form {
@@ -30,6 +31,19 @@ struct GeneralSettingsView: View {
                         }
                     }
                 }
+            }
+
+            Section("Gaps") {
+                HStack {
+                    Slider(value: $gap, in: 0...40, step: 2)
+                    Text(verbatim: "\(Int(gap)) px")
+                        .foregroundStyle(.secondary)
+                        .monospacedDigit()
+                        .frame(width: 44, alignment: .trailing)
+                }
+                Text("Space between windows and screen edges when placing.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
             }
         }
         .formStyle(.grouped)

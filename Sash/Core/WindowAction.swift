@@ -73,4 +73,15 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .restore:        return nil
         }
     }
+
+    /// ギャップ（余白）を均等に適用した配置先矩形（Cocoa 座標）。
+    /// 「working area を gap/2 内側 → タイル計算 → タイルを gap/2 内側」とすることで、
+    /// 画面端の余白もウインドウ間の余白も等しく gap になる。restore は nil。
+    func targetFrame(visibleFrame v: CGRect, gap: CGFloat) -> CGRect? {
+        guard gap > 0 else { return targetFrame(visibleFrame: v) }
+        let half = gap / 2
+        let working = ScreenGeometry.inset(v, by: half)
+        guard let tile = targetFrame(visibleFrame: working) else { return nil }
+        return ScreenGeometry.inset(tile, by: half)
+    }
 }

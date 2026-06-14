@@ -39,7 +39,8 @@ final class WindowManager {
         let currentCocoa = ScreenGeometry.flipY(currentQuartz, primaryHeight: primaryH)
         let screen = ScreenGeometry.screen(containingCocoa: currentCocoa) ?? NSScreen.main
         guard let visible = screen?.visibleFrame,
-              let targetCocoa = action.targetFrame(visibleFrame: visible) else { return }
+              let targetCocoa = action.targetFrame(visibleFrame: visible,
+                                                   gap: CGFloat(Preferences.shared.gap)) else { return }
         let targetQuartz = ScreenGeometry.flipY(targetCocoa, primaryHeight: primaryH)
 
         // 配置前フレームを記録 → 適用 → 実際に適用されたフレームを記録（Restore 用）

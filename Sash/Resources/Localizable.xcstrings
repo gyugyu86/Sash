@@ -51,6 +51,16 @@
         }
       }
     },
+    "Gaps" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "余白"
+          }
+        }
+      }
+    },
     "General" : {
       "localizations" : {
         "ja" : {
@@ -211,6 +221,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ショートカット"
+          }
+        }
+      }
+    },
+    "Space between windows and screen edges when placing." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置時にウインドウと画面端のあいだに設ける余白。"
           }
         }
       }

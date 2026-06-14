@@ -52,4 +52,33 @@ final class ScreenGeometryTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(result.width, 0)
         XCTAssertGreaterThanOrEqual(result.height, 0)
     }
+
+    // MARK: - Gap（均等余白）の適用
+
+    func testHalvesWithGapHaveEqualEdgeAndInteriorGaps() {
+        let v = CGRect(x: 0, y: 0, width: 1000, height: 800)
+        let gap: CGFloat = 8
+        let left = WindowAction.leftHalf.targetFrame(visibleFrame: v, gap: gap)!
+        let right = WindowAction.rightHalf.targetFrame(visibleFrame: v, gap: gap)!
+        // 画面端からの余白 = gap
+        XCTAssertEqual(left.minX, gap, accuracy: 0.001)              // 左端
+        XCTAssertEqual(left.minY, gap, accuracy: 0.001)              // 下端
+        XCTAssertEqual(v.maxX - right.maxX, gap, accuracy: 0.001)    // 右端
+        // ウインドウ間の余白も gap（不揃いにならない）
+        XCTAssertEqual(right.minX - left.maxX, gap, accuracy: 0.001)
+        // 高さは上下 gap ずつ内側
+        XCTAssertEqual(left.height, 800 - 2 * gap, accuracy: 0.001)
+    }
+
+    func testGapZeroEqualsNoGap() {
+        let v = CGRect(x: 0, y: 0, width: 1000, height: 800)
+        XCTAssertEqual(WindowAction.leftHalf.targetFrame(visibleFrame: v, gap: 0),
+                       WindowAction.leftHalf.targetFrame(visibleFrame: v))
+    }
+
+    func testMaximizeWithGapInsetsAllEdges() {
+        let v = CGRect(x: 0, y: 0, width: 1000, height: 800)
+        let m = WindowAction.maximize.targetFrame(visibleFrame: v, gap: 10)!
+        XCTAssertEqual(m, CGRect(x: 10, y: 10, width: 980, height: 780))
+    }
 }
