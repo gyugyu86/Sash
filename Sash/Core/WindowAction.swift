@@ -12,6 +12,7 @@ enum WindowAction: String, CaseIterable, Identifiable {
     case leftThird, centerThird, rightThird
     case leftTwoThirds, rightTwoThirds
     case maximize
+    case restore   // 履歴ベース: 配置前のフレームへ戻す（幾何計算なし。WindowManager が処理）
 
     var id: String { rawValue }
 
@@ -33,6 +34,7 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .leftTwoThirds:  return String(localized: "Left Two Thirds")
         case .rightTwoThirds: return String(localized: "Right Two Thirds")
         case .maximize:       return String(localized: "Maximize")
+        case .restore:        return String(localized: "Restore")
         }
     }
 
@@ -44,13 +46,14 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .topHalf:     return "rectangle.tophalf.inset.filled"
         case .bottomHalf:  return "rectangle.bottomhalf.inset.filled"
         case .maximize:    return "rectangle.inset.filled"
+        case .restore:     return "arrow.uturn.backward"
         default:           return "square.split.2x2"
         }
     }
 
-    /// 配置先の矩形を返す（Cocoa 座標）。
+    /// 配置先の矩形を返す（Cocoa 座標）。`restore` は履歴ベースで幾何計算が無いため nil。
     /// - Parameter v: 対象スクリーンの visibleFrame（メニューバー・Dock を除いた領域）
-    func targetFrame(visibleFrame v: CGRect) -> CGRect {
+    func targetFrame(visibleFrame v: CGRect) -> CGRect? {
         let w = v.width, h = v.height
         switch self {
         case .leftHalf:       return CGRect(x: v.minX,          y: v.minY,       width: w/2,   height: h)
@@ -67,6 +70,7 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .leftTwoThirds:  return CGRect(x: v.minX,          y: v.minY,       width: 2*w/3, height: h)
         case .rightTwoThirds: return CGRect(x: v.minX + w/3,    y: v.minY,       width: 2*w/3, height: h)
         case .maximize:       return v
+        case .restore:        return nil
         }
     }
 }

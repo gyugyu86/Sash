@@ -44,6 +44,8 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: io.github.gyugyu86.Sash
         PRODUCT_NAME: Sash
         ENABLE_TESTABILITY: "YES"    # @testable import Sash を可能にする。
+        # CGWindowID 取得用の非公開API宣言（_AXUIElementGetWindow）を Swift から使うため。
+        SWIFT_OBJC_BRIDGING_HEADER: Sash/Sash-Bridging-Header.h
         # 署名: 自動署名 + 開発チームを明示。これが無いとアドホック署名(-)になり、
         # アクセシビリティ許可が定着せず毎回プロンプトが出る（AX 系アプリ必須）。
         # project.yml に書くことで `xcodegen generate` してもチーム設定が消えない。

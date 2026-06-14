@@ -151,6 +151,16 @@
         }
       }
     },
+    "Restore" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "元に戻す"
+          }
+        }
+      }
+    },
     "Right Half" : {
       "localizations" : {
         "ja" : {

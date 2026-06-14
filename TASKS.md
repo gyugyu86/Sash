@@ -14,11 +14,12 @@ MVP を `DESIGN.md` のモジュール構成へ分割。座標計算を `Core/Sc
 - 結果: ビルド成功 / ユニットテスト 6 件グリーン / ja ローカライズがバンドルに反映。
 - 残: 人間ゲート（Xcode で Signing チーム選択 → ⌘R → アクセシビリティ許可 → 既存ショートカット動作確認）。
 
-## Phase 1 — Restore（元に戻す）
-`Core/PlacementHistory.swift` を追加。スナップ前のフレームを記録し、`WindowAction.restore` で復元。
-ショートカット（例 ⌃⌥ Delete）を割り当て。
+## Phase 1 — Restore（元に戻す）✅ 実装済み（実機確認待ち）
+`Core/PlacementHistory.swift` を追加。配置前のフレームを CGWindowID 別に記録し、`WindowAction.restore`（⌃⌥⌫）で復元。
+方針は「元の位置に戻す」: 連続配置の途中では復元先を上書きせず、ユーザーが動かしたときだけ更新（純関数 `shouldUpdateRestoreFrame` + テスト）。
+CGWindowID は非公開 API `_AXUIElementGetWindow`（`Sash-Bridging-Header.h`）で取得。
 
-- 検証: 適当に配置 → restore で元のサイズ/位置に戻る。
+- 検証: 適当に配置 → ⌃⌥⌫ で元のサイズ/位置に戻る（人間ゲート: 実機確認）。
 
 ## Phase 2 — ギャップ（余白）
 `ScreenGeometry.inset(_:by:)` を配置計算に組み込み、`Preferences.gap` で制御。
