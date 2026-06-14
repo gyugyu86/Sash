@@ -5,7 +5,7 @@ import ApplicationServices
 ///
 /// AX 操作はこの型に閉じ込め、UI 層から AXUIElement を直接触らない（CLAUDE.md 規約）。
 /// 座標変換は `ScreenGeometry`、権限は `PermissionsManager`、配置前フレームの記録は
-/// `PlacementHistory` に委譲する。
+/// `PlacementHistory`、ディスプレイ選択は `DisplayMover` に委譲する。
 final class WindowManager {
     static let shared = WindowManager()
     private init() {}
@@ -24,14 +24,23 @@ final class WindowManager {
         }
         let id = windowID(of: window)
 
-        // Restore: 履歴から配置前フレームへ戻す（幾何計算しない）
-        if action == .restore {
+        // 履歴ベース／ディスプレイ移動は幾何配置とは別経路で処理する
+        switch action {
+        case .restore:
             guard let id, let target = PlacementHistory.shared.restoreFrame(for: id) else {
                 NSSound.beep()
                 return
             }
             setFrame(target, for: window)
             return
+        case .moveToPreviousDisplay:
+            moveToDisplay(window: window, currentQuartz: currentQuartz, direction: .previous)
+            return
+        case .moveToNextDisplay:
+            moveToDisplay(window: window, currentQuartz: currentQuartz, direction: .next)
+            return
+        default:
+            break
         }
 
         // 幾何配置: 現在のディスプレイの visibleFrame を基準に目標矩形を求める
@@ -50,6 +59,26 @@ final class WindowManager {
             let applied = frame(of: window) ?? targetQuartz
             PlacementHistory.shared.recordApplied(frame: applied, for: id)
         }
+    }
+
+    /// 最前面ウインドウを隣のディスプレイへ、比率を保って移動する。
+    private func moveToDisplay(window: AXUIElement, currentQuartz: CGRect, direction: DisplayMover.Direction) {
+        let primaryH = ScreenGeometry.primaryHeight()
+        let currentCocoa = ScreenGeometry.flipY(currentQuartz, primaryHeight: primaryH)
+        guard let currentScreen = ScreenGeometry.screen(containingCocoa: currentCocoa) else {
+            NSSound.beep()
+            return
+        }
+        let allVisible = NSScreen.screens.map { $0.visibleFrame }
+        guard let targetVisible = DisplayMover.adjacentVisibleFrame(current: currentScreen.visibleFrame,
+                                                                    all: allVisible, direction) else {
+            NSSound.beep()   // ディスプレイが 1 枚 等で移動先が無い
+            return
+        }
+        let targetCocoa = ScreenGeometry.proportionalFrame(currentCocoa,
+                                                           from: currentScreen.visibleFrame, to: targetVisible)
+        let targetQuartz = ScreenGeometry.flipY(targetCocoa, primaryHeight: primaryH)
+        setFrame(targetQuartz, for: window)
     }
 
     // MARK: - AX ヘルパー

@@ -40,4 +40,23 @@ enum ScreenGeometry {
                       width: max(0, inset.width),
                       height: max(0, inset.height))
     }
+
+    /// あるディスプレイ上の矩形 frame を、相対位置・相対サイズを保ったまま別ディスプレイへ写像する。
+    /// source/target はそれぞれのディスプレイの visibleFrame（同一座標系）。純関数。
+    /// 写像後が target をはみ出す場合はサイズ・位置をクランプして中に収める。
+    static func proportionalFrame(_ frame: CGRect, from source: CGRect, to target: CGRect) -> CGRect {
+        guard source.width > 0, source.height > 0 else { return frame }
+        let relX = (frame.minX - source.minX) / source.width
+        let relY = (frame.minY - source.minY) / source.height
+        let relW = frame.width / source.width
+        let relH = frame.height / source.height
+
+        let w = min(relW * target.width, target.width)
+        let h = min(relH * target.height, target.height)
+        var x = target.minX + relX * target.width
+        var y = target.minY + relY * target.height
+        x = min(max(x, target.minX), target.maxX - w)
+        y = min(max(y, target.minY), target.maxY - h)
+        return CGRect(x: x, y: y, width: w, height: h)
+    }
 }

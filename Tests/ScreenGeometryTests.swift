@@ -81,4 +81,29 @@ final class ScreenGeometryTests: XCTestCase {
         let m = WindowAction.maximize.targetFrame(visibleFrame: v, gap: 10)!
         XCTAssertEqual(m, CGRect(x: 10, y: 10, width: 980, height: 780))
     }
+
+    // MARK: - proportionalFrame（ディスプレイ間の比率写像）
+
+    func testProportionalFrameMapsLeftHalfToLeftHalf() {
+        let a = CGRect(x: 0, y: 0, width: 1000, height: 800)
+        let b = CGRect(x: 1000, y: 0, width: 1600, height: 1200)   // 右隣・別サイズ
+        let leftHalfA = CGRect(x: 0, y: 0, width: 500, height: 800)
+        XCTAssertEqual(ScreenGeometry.proportionalFrame(leftHalfA, from: a, to: b),
+                       CGRect(x: 1000, y: 0, width: 800, height: 1200))
+    }
+
+    func testProportionalFrameKeepsCenteredWindowCentered() {
+        let a = CGRect(x: 0, y: 0, width: 1000, height: 1000)
+        let b = CGRect(x: 0, y: 0, width: 500, height: 500)
+        let centeredA = CGRect(x: 250, y: 250, width: 500, height: 500)   // 中央 50%
+        XCTAssertEqual(ScreenGeometry.proportionalFrame(centeredA, from: a, to: b),
+                       CGRect(x: 125, y: 125, width: 250, height: 250))
+    }
+
+    func testProportionalFrameClampsWithinTarget() {
+        // source いっぱいのウインドウは target いっぱいに収まる（はみ出さない）
+        let a = CGRect(x: 0, y: 0, width: 1000, height: 800)
+        let b = CGRect(x: 0, y: 0, width: 600, height: 400)
+        XCTAssertEqual(ScreenGeometry.proportionalFrame(a, from: a, to: b), b)
+    }
 }

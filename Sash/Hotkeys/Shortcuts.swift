@@ -2,6 +2,7 @@ import KeyboardShortcuts
 
 // 各アクションに対応するショートカット名と既定キー。
 // ⌃⌥ を基準に割り当て（macOS の Spaces 切替 ⌃← 等とは衝突しない）。
+// ディスプレイ間移動だけは ⌃⌥⌘ ＋ 矢印（半分配置 ⌃⌥矢印 と区別）。
 extension KeyboardShortcuts.Name {
     static let leftHalf       = Self("leftHalf",       default: .init(.leftArrow,  modifiers: [.control, .option]))
     static let rightHalf      = Self("rightHalf",      default: .init(.rightArrow, modifiers: [.control, .option]))
@@ -18,6 +19,8 @@ extension KeyboardShortcuts.Name {
     static let rightTwoThirds = Self("rightTwoThirds", default: .init(.t, modifiers: [.control, .option]))
     static let maximize       = Self("maximize",       default: .init(.return, modifiers: [.control, .option]))
     static let restore        = Self("restore",        default: .init(.delete, modifiers: [.control, .option]))
+    static let moveToPreviousDisplay = Self("moveToPreviousDisplay", default: .init(.leftArrow,  modifiers: [.control, .option, .command]))
+    static let moveToNextDisplay     = Self("moveToNextDisplay",     default: .init(.rightArrow, modifiers: [.control, .option, .command]))
 }
 
 /// ショートカット名 ↔ アクションの対応表。設定画面の一覧にもこれを使う。
@@ -44,6 +47,8 @@ enum Shortcuts {
         .init(name: .rightTwoThirds, action: .rightTwoThirds),
         .init(name: .maximize,       action: .maximize),
         .init(name: .restore,        action: .restore),
+        .init(name: .moveToPreviousDisplay, action: .moveToPreviousDisplay),
+        .init(name: .moveToNextDisplay,     action: .moveToNextDisplay),
     ]
 
     /// 起動時に全ショートカットを登録

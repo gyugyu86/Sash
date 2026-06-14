@@ -141,6 +141,26 @@
         }
       }
     },
+    "Move to Next Display" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "次のディスプレイへ"
+          }
+        }
+      }
+    },
+    "Move to Previous Display" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "前のディスプレイへ"
+          }
+        }
+      }
+    },
     "Not granted — Sash needs permission to move windows" : {
       "localizations" : {
         "ja" : {
