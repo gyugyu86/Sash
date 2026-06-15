@@ -24,6 +24,10 @@ extension KeyboardShortcuts.Name {
     static let moveToDisplay1        = Self("moveToDisplay1", default: .init(.one,   modifiers: [.control, .option, .command]))
     static let moveToDisplay2        = Self("moveToDisplay2", default: .init(.two,   modifiers: [.control, .option, .command]))
     static let moveToDisplay3        = Self("moveToDisplay3", default: .init(.three, modifiers: [.control, .option, .command]))
+    // 4 画面目以降は既定キー割り当てなし（衝突回避）。必要なら設定で各自割り当てる。
+    static let moveToDisplay4        = Self("moveToDisplay4")
+    static let moveToDisplay5        = Self("moveToDisplay5")
+    static let moveToDisplay6        = Self("moveToDisplay6")
 }
 
 /// ショートカット名 ↔ アクションの対応表。設定画面の一覧にもこれを使う。
@@ -55,6 +59,9 @@ enum Shortcuts {
         .init(name: .moveToDisplay1,        action: .moveToDisplay1),
         .init(name: .moveToDisplay2,        action: .moveToDisplay2),
         .init(name: .moveToDisplay3,        action: .moveToDisplay3),
+        .init(name: .moveToDisplay4,        action: .moveToDisplay4),
+        .init(name: .moveToDisplay5,        action: .moveToDisplay5),
+        .init(name: .moveToDisplay6,        action: .moveToDisplay6),
     ]
 
     /// 起動時に全ショートカットを登録

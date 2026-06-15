@@ -16,6 +16,7 @@ enum WindowAction: String, CaseIterable, Identifiable {
     case restore                                    // 配置前のフレームへ戻す（履歴ベース）
     case moveToPreviousDisplay, moveToNextDisplay   // 隣のディスプレイへ比率保持で移動
     case moveToDisplay1, moveToDisplay2, moveToDisplay3  // 左から N 番目のディスプレイへ比率保持で移動
+    case moveToDisplay4, moveToDisplay5, moveToDisplay6  // 最大 6 画面まで対応
 
     var id: String { rawValue }
 
@@ -33,7 +34,8 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .restore:
             return .restore
         case .moveToPreviousDisplay, .moveToNextDisplay,
-             .moveToDisplay1, .moveToDisplay2, .moveToDisplay3:
+             .moveToDisplay1, .moveToDisplay2, .moveToDisplay3,
+             .moveToDisplay4, .moveToDisplay5, .moveToDisplay6:
             return .display
         default:
             return .placement
@@ -46,6 +48,9 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .moveToDisplay1: return 1
         case .moveToDisplay2: return 2
         case .moveToDisplay3: return 3
+        case .moveToDisplay4: return 4
+        case .moveToDisplay5: return 5
+        case .moveToDisplay6: return 6
         default:              return nil
         }
     }
@@ -73,7 +78,8 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .restore:               return String(localized: "Restore", bundle: b)
         case .moveToPreviousDisplay: return String(localized: "Move to Previous Display", bundle: b)
         case .moveToNextDisplay:     return String(localized: "Move to Next Display", bundle: b)
-        case .moveToDisplay1, .moveToDisplay2, .moveToDisplay3:
+        case .moveToDisplay1, .moveToDisplay2, .moveToDisplay3,
+             .moveToDisplay4, .moveToDisplay5, .moveToDisplay6:
             return String(localized: "Move to Display \(displayNumber ?? 0)", bundle: b)
         }
     }
@@ -92,6 +98,9 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .moveToDisplay1:        return "1.square"
         case .moveToDisplay2:        return "2.square"
         case .moveToDisplay3:        return "3.square"
+        case .moveToDisplay4:        return "4.square"
+        case .moveToDisplay5:        return "5.square"
+        case .moveToDisplay6:        return "6.square"
         default:                     return "square.split.2x2"
         }
     }
@@ -116,7 +125,8 @@ enum WindowAction: String, CaseIterable, Identifiable {
         case .rightTwoThirds: return CGRect(x: v.minX + w/3,    y: v.minY,       width: 2*w/3, height: h)
         case .maximize:       return v
         case .restore, .moveToPreviousDisplay, .moveToNextDisplay,
-             .moveToDisplay1, .moveToDisplay2, .moveToDisplay3:
+             .moveToDisplay1, .moveToDisplay2, .moveToDisplay3,
+             .moveToDisplay4, .moveToDisplay5, .moveToDisplay6:
             return nil
         }
     }

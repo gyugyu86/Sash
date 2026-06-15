@@ -39,7 +39,8 @@ final class WindowManager {
         case .moveToNextDisplay:
             moveToDisplay(window: window, currentQuartz: currentQuartz, direction: .next)
             return
-        case .moveToDisplay1, .moveToDisplay2, .moveToDisplay3:
+        case .moveToDisplay1, .moveToDisplay2, .moveToDisplay3,
+             .moveToDisplay4, .moveToDisplay5, .moveToDisplay6:
             if let n = action.displayNumber {
                 moveToDisplay(window: window, currentQuartz: currentQuartz, displayNumber: n)
             }
