@@ -6,6 +6,7 @@ struct GeneralSettingsView: View {
     @State private var hasPermission = PermissionsManager.shared.isTrusted
     @AppStorage("gap") private var gap: Double = 0              // Preferences.gap と同じ UserDefaults キー
     @AppStorage("cycleEnabled") private var cycleEnabled = true // Preferences.cycleEnabled と同じキー
+    @AppStorage("monitorMemoryEnabled") private var monitorMemoryEnabled = false // Preferences と同じキー
     @EnvironmentObject private var languageManager: LanguageManager
 
     var body: some View {
@@ -61,6 +62,16 @@ struct GeneralSettingsView: View {
                 Text("Pressing the same left/right key again steps the width: 1/2 → 2/3 → 1/3.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
+            }
+
+            Section("Per-Display Layouts") {
+                Toggle("Remember layout per display setup", isOn: $monitorMemoryEnabled)
+                Text("When you connect or disconnect a display, Sash restores the layout you last used with that display setup.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                Button("Forget Saved Layouts") {
+                    MonitorMemory.shared.forgetAll()
+                }
             }
         }
         .formStyle(.grouped)
