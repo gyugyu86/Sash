@@ -1,4 +1,5 @@
 import SwiftUI
+import AppKit
 
 /// 初回（AX 未許可）に出すウェルカム画面の中身。
 /// 権限の必要性を説明し、設定ペインを開くボタンを提供する。許可状態は `WelcomeModel` が反映し、
@@ -8,10 +9,9 @@ struct WelcomeView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            // TODO(Phase 7-④): 仮アイコン確定後に Assets のアプリアイコンへ差し替える。
-            Image(systemName: "rectangle.split.2x1.fill")
-                .font(.system(size: 56))
-                .foregroundStyle(.tint)
+            Image(nsImage: NSApplication.shared.applicationIconImage)
+                .resizable()
+                .frame(width: 84, height: 84)
 
             Text("Welcome to Sash")
                 .font(.title)

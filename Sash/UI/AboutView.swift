@@ -1,4 +1,5 @@
 import SwiftUI
+import AppKit
 
 /// About タブ: アプリ名・バージョン・一言説明・プライバシー方針（データ収集なし）を表示する。
 /// ユーザー向け文字列は String Catalog 経由。アプリ名とバージョンは固有値なので
@@ -18,10 +19,9 @@ struct AboutView: View {
 
     var body: some View {
         VStack(spacing: 10) {
-            // TODO(Phase 7-④): 仮アイコン確定後に Assets のアプリアイコンへ差し替える。
-            Image(systemName: "rectangle.split.2x1.fill")
-                .font(.system(size: 64))
-                .foregroundStyle(.tint)
+            Image(nsImage: NSApplication.shared.applicationIconImage)
+                .resizable()
+                .frame(width: 96, height: 96)
                 .padding(.bottom, 4)
 
             Text(verbatim: Self.appName)
