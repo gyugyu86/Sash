@@ -33,8 +33,8 @@ final class WelcomeWindowController: NSObject, NSWindowDelegate {
             return
         }
 
-        // Sash を AX 許可リストに登録しつつ、標準プロンプトも一度だけ出す。
-        PermissionsManager.shared.requestAccess()
+        // ダイアログを出さずに Sash を許可リストへ登録する（標準プロンプトは出さない＝ウインドウは 1 つ）。
+        PermissionsManager.shared.registerInAccessibilityList()
 
         let root = WelcomeView(model: model)
             .environment(\.locale, LanguageManager.shared.locale)

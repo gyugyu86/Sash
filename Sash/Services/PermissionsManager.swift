@@ -19,6 +19,17 @@ final class PermissionsManager {
         _ = AXIsProcessTrustedWithOptions(options)
     }
 
+    /// 標準ダイアログを出さずに Sash を「アクセシビリティ」許可リストへ登録する。
+    /// 未許可のまま AX を一度呼ぶと、システムがアプリをリスト（オフ状態）へ追加するため、
+    /// オンボーディングで設定ペインを開いたときユーザーが Sash をすぐ見つけてオンにできる。
+    /// `requestAccess()`（標準プロンプト）と違い、ウインドウが増えない。
+    func registerInAccessibilityList() {
+        guard !isTrusted else { return }
+        let systemWide = AXUIElementCreateSystemWide()
+        var value: CFTypeRef?
+        _ = AXUIElementCopyAttributeValue(systemWide, kAXFocusedUIElementAttribute as CFString, &value)
+    }
+
     /// システム設定の「プライバシーとセキュリティ → アクセシビリティ」ペインを開く。
     /// ユーザーが Sash をリストでオンにできるよう、オンボーディングや設定画面から呼ぶ。
     func openAccessibilitySettings() {

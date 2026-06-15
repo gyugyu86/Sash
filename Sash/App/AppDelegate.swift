@@ -8,7 +8,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         Shortcuts.registerAll()
 
         // アクセシビリティ未許可なら初回オンボーディング（ウェルカム画面）を表示。
-        // 標準プロンプトの呼び出しもコントローラ内に集約している。
+        // 標準ダイアログは出さず、案内はこのウインドウ 1 つに集約する。
         WelcomeWindowController.shared.showIfNeeded()
     }
 }
