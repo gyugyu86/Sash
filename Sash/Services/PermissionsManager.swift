@@ -1,4 +1,5 @@
 import ApplicationServices
+import AppKit
 
 /// アクセシビリティ（AX）権限の確認と要求を一手に引き受ける。
 ///
@@ -16,5 +17,14 @@ final class PermissionsManager {
     func requestAccess() {
         let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary
         _ = AXIsProcessTrustedWithOptions(options)
+    }
+
+    /// システム設定の「プライバシーとセキュリティ → アクセシビリティ」ペインを開く。
+    /// ユーザーが Sash をリストでオンにできるよう、オンボーディングや設定画面から呼ぶ。
+    func openAccessibilitySettings() {
+        let urlString = "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"
+        if let url = URL(string: urlString) {
+            NSWorkspace.shared.open(url)
+        }
     }
 }

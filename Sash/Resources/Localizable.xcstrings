@@ -1,6 +1,102 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Find Sash in the list and turn it on. This window closes automatically once enabled." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リストから Sash を見つけてオンにしてください。許可されると、この画面は自動的に閉じます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "목록에서 Sash를 찾아 켜 주세요. 허용되면 이 창은 자동으로 닫힙니다."
+          }
+        }
+      }
+    },
+    "Open Accessibility Settings…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アクセシビリティ設定を開く…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "손쉬운 사용 설정 열기…"
+          }
+        }
+      }
+    },
+    "Permission granted" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "権限が付与されました"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "권한이 허용되었습니다"
+          }
+        }
+      }
+    },
+    "Sash arranges your windows with the keyboard. To move other apps’ windows, it needs Accessibility permission." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sash はキーボードでウインドウを整えます。他アプリのウインドウを操作するには、アクセシビリティ権限が必要です。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sash는 키보드로 윈도우를 정리합니다. 다른 앱의 윈도우를 옮기려면 손쉬운 사용 권한이 필요합니다."
+          }
+        }
+      }
+    },
+    "Waiting for permission…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "権限を待っています…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "권한을 기다리는 중…"
+          }
+        }
+      }
+    },
+    "Welcome to Sash" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sash へようこそ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sash에 오신 것을 환영합니다"
+          }
+        }
+      }
+    },
     "A keyboard-first window manager for macOS." : {
       "localizations" : {
         "ja" : {

@@ -7,9 +7,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         // グローバルショートカットを登録
         Shortcuts.registerAll()
 
-        // アクセシビリティ権限が無ければ初回に案内
-        if !PermissionsManager.shared.isTrusted {
-            PermissionsManager.shared.requestAccess()
-        }
+        // アクセシビリティ未許可なら初回オンボーディング（ウェルカム画面）を表示。
+        // 標準プロンプトの呼び出しもコントローラ内に集約している。
+        WelcomeWindowController.shared.showIfNeeded()
     }
 }
