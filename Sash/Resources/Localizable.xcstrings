@@ -401,6 +401,38 @@
         }
       }
     },
+    "Restore Window Layout" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ウインドウ配置を復元"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "윈도우 배치 복원"
+          }
+        }
+      }
+    },
+    "Save Window Layout" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ウインドウ配置を記録"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "윈도우 배치 저장"
+          }
+        }
+      }
+    },
     "Move to Display %lld" : {
       "localizations" : {
         "ja" : {
