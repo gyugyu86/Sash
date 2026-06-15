@@ -38,24 +38,26 @@ enum WindowAction: String, CaseIterable, Identifiable {
     /// メニューやショートカット一覧に表示するローカライズ済みの名称。
     /// 英語をソースキーとして String Catalog から解決する。
     var localizedTitle: String {
+        // 選択言語の .lproj から解決する（メニュー/ショートカット名を即時切替対象にする）。
+        let b = LanguageManager.shared.bundle
         switch self {
-        case .leftHalf:              return String(localized: "Left Half")
-        case .rightHalf:             return String(localized: "Right Half")
-        case .topHalf:               return String(localized: "Top Half")
-        case .bottomHalf:            return String(localized: "Bottom Half")
-        case .topLeft:               return String(localized: "Top Left")
-        case .topRight:              return String(localized: "Top Right")
-        case .bottomLeft:            return String(localized: "Bottom Left")
-        case .bottomRight:           return String(localized: "Bottom Right")
-        case .leftThird:             return String(localized: "Left Third")
-        case .centerThird:           return String(localized: "Center Third")
-        case .rightThird:            return String(localized: "Right Third")
-        case .leftTwoThirds:         return String(localized: "Left Two Thirds")
-        case .rightTwoThirds:        return String(localized: "Right Two Thirds")
-        case .maximize:              return String(localized: "Maximize")
-        case .restore:               return String(localized: "Restore")
-        case .moveToPreviousDisplay: return String(localized: "Move to Previous Display")
-        case .moveToNextDisplay:     return String(localized: "Move to Next Display")
+        case .leftHalf:              return String(localized: "Left Half", bundle: b)
+        case .rightHalf:             return String(localized: "Right Half", bundle: b)
+        case .topHalf:               return String(localized: "Top Half", bundle: b)
+        case .bottomHalf:            return String(localized: "Bottom Half", bundle: b)
+        case .topLeft:               return String(localized: "Top Left", bundle: b)
+        case .topRight:              return String(localized: "Top Right", bundle: b)
+        case .bottomLeft:            return String(localized: "Bottom Left", bundle: b)
+        case .bottomRight:           return String(localized: "Bottom Right", bundle: b)
+        case .leftThird:             return String(localized: "Left Third", bundle: b)
+        case .centerThird:           return String(localized: "Center Third", bundle: b)
+        case .rightThird:            return String(localized: "Right Third", bundle: b)
+        case .leftTwoThirds:         return String(localized: "Left Two Thirds", bundle: b)
+        case .rightTwoThirds:        return String(localized: "Right Two Thirds", bundle: b)
+        case .maximize:              return String(localized: "Maximize", bundle: b)
+        case .restore:               return String(localized: "Restore", bundle: b)
+        case .moveToPreviousDisplay: return String(localized: "Move to Previous Display", bundle: b)
+        case .moveToNextDisplay:     return String(localized: "Move to Next Display", bundle: b)
         }
     }
 

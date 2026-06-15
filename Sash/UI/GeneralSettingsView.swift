@@ -6,6 +6,7 @@ struct GeneralSettingsView: View {
     @State private var hasPermission = PermissionsManager.shared.isTrusted
     @AppStorage("gap") private var gap: Double = 0              // Preferences.gap と同じ UserDefaults キー
     @AppStorage("cycleEnabled") private var cycleEnabled = true // Preferences.cycleEnabled と同じキー
+    @EnvironmentObject private var languageManager: LanguageManager
 
     var body: some View {
         Form {
@@ -14,6 +15,14 @@ struct GeneralSettingsView: View {
                     .onChange(of: launchAtLogin) { _, newValue in
                         try? LoginItem.setEnabled(newValue)
                     }
+            }
+
+            Section {
+                Picker("Language", selection: $languageManager.language) {
+                    ForEach(AppLanguage.allCases) { lang in
+                        lang.labelText.tag(lang)
+                    }
+                }
             }
 
             Section("Accessibility Permission") {

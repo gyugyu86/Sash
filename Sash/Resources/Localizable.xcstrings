@@ -209,6 +209,22 @@
         }
       }
     },
+    "Language" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "言語"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "언어"
+          }
+        }
+      }
+    },
     "Launch Sash at login" : {
       "localizations" : {
         "ja" : {
@@ -497,6 +513,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "윈도우를 배치할 때 윈도우와 화면 가장자리 사이의 여백입니다."
+          }
+        }
+      }
+    },
+    "System" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "システム"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "시스템"
           }
         }
       }
