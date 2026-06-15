@@ -21,6 +21,9 @@ extension KeyboardShortcuts.Name {
     static let restore        = Self("restore",        default: .init(.delete, modifiers: [.control, .option]))
     static let moveToPreviousDisplay = Self("moveToPreviousDisplay", default: .init(.leftArrow,  modifiers: [.control, .option, .command]))
     static let moveToNextDisplay     = Self("moveToNextDisplay",     default: .init(.rightArrow, modifiers: [.control, .option, .command]))
+    static let moveToDisplay1        = Self("moveToDisplay1", default: .init(.one,   modifiers: [.control, .option, .command]))
+    static let moveToDisplay2        = Self("moveToDisplay2", default: .init(.two,   modifiers: [.control, .option, .command]))
+    static let moveToDisplay3        = Self("moveToDisplay3", default: .init(.three, modifiers: [.control, .option, .command]))
 }
 
 /// ショートカット名 ↔ アクションの対応表。設定画面の一覧にもこれを使う。
@@ -49,6 +52,9 @@ enum Shortcuts {
         .init(name: .restore,        action: .restore),
         .init(name: .moveToPreviousDisplay, action: .moveToPreviousDisplay),
         .init(name: .moveToNextDisplay,     action: .moveToNextDisplay),
+        .init(name: .moveToDisplay1,        action: .moveToDisplay1),
+        .init(name: .moveToDisplay2,        action: .moveToDisplay2),
+        .init(name: .moveToDisplay3,        action: .moveToDisplay3),
     ]
 
     /// 起動時に全ショートカットを登録

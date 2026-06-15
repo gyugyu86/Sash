@@ -401,6 +401,22 @@
         }
       }
     },
+    "Move to Display %lld" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスプレイ %lld へ移動"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "디스플레이 %lld(으)로 이동"
+          }
+        }
+      }
+    },
     "Move to Next Display" : {
       "localizations" : {
         "ja" : {

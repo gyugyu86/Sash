@@ -39,6 +39,11 @@ final class WindowManager {
         case .moveToNextDisplay:
             moveToDisplay(window: window, currentQuartz: currentQuartz, direction: .next)
             return
+        case .moveToDisplay1, .moveToDisplay2, .moveToDisplay3:
+            if let n = action.displayNumber {
+                moveToDisplay(window: window, currentQuartz: currentQuartz, displayNumber: n)
+            }
+            return
         default:
             break
         }
@@ -84,9 +89,32 @@ final class WindowManager {
             NSSound.beep()   // ディスプレイが 1 枚 等で移動先が無い
             return
         }
-        let targetCocoa = ScreenGeometry.proportionalFrame(currentCocoa,
-                                                           from: currentScreen.visibleFrame, to: targetVisible)
-        let targetQuartz = ScreenGeometry.flipY(targetCocoa, primaryHeight: primaryH)
+        applyProportionalMove(window: window, currentCocoa: currentCocoa,
+                              from: currentScreen.visibleFrame, to: targetVisible, primaryHeight: primaryH)
+    }
+
+    /// 最前面ウインドウを「左から数えて displayNumber 番目（1 始まり）」のディスプレイへ移動する。
+    private func moveToDisplay(window: AXUIElement, currentQuartz: CGRect, displayNumber: Int) {
+        let primaryH = ScreenGeometry.primaryHeight()
+        let currentCocoa = ScreenGeometry.flipY(currentQuartz, primaryHeight: primaryH)
+        guard let currentScreen = ScreenGeometry.screen(containingCocoa: currentCocoa) else {
+            NSSound.beep()
+            return
+        }
+        let allVisible = NSScreen.screens.map { $0.visibleFrame }
+        guard let targetVisible = DisplayMover.visibleFrame(atDisplayIndex: displayNumber - 1, among: allVisible) else {
+            NSSound.beep()   // その番号のディスプレイが無い
+            return
+        }
+        applyProportionalMove(window: window, currentCocoa: currentCocoa,
+                              from: currentScreen.visibleFrame, to: targetVisible, primaryHeight: primaryH)
+    }
+
+    /// 比率写像でフレームを移動先 visibleFrame に合わせて適用する共通処理。
+    private func applyProportionalMove(window: AXUIElement, currentCocoa: CGRect,
+                                       from: CGRect, to: CGRect, primaryHeight: CGFloat) {
+        let targetCocoa = ScreenGeometry.proportionalFrame(currentCocoa, from: from, to: to)
+        let targetQuartz = ScreenGeometry.flipY(targetCocoa, primaryHeight: primaryHeight)
         setFrame(targetQuartz, for: window)
     }
 
