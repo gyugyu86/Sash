@@ -24,4 +24,16 @@ final class DisplayMoverTests: XCTestCase {
     func testSingleDisplayReturnsNil() {
         XCTAssertNil(DisplayMover.adjacentVisibleFrame(current: s0, all: [s0], .next))
     }
+
+    func testVisibleFrameAtDisplayIndexOrdersLeftToRight() {
+        let all = [s2, s0, s1]   // 順不同でも左→右に整列される
+        XCTAssertEqual(DisplayMover.visibleFrame(atDisplayIndex: 0, among: all), s0)
+        XCTAssertEqual(DisplayMover.visibleFrame(atDisplayIndex: 1, among: all), s1)
+        XCTAssertEqual(DisplayMover.visibleFrame(atDisplayIndex: 2, among: all), s2)
+    }
+
+    func testVisibleFrameAtDisplayIndexOutOfRangeReturnsNil() {
+        XCTAssertNil(DisplayMover.visibleFrame(atDisplayIndex: 3, among: [s0, s1, s2]))
+        XCTAssertNil(DisplayMover.visibleFrame(atDisplayIndex: -1, among: [s0]))
+    }
 }
