@@ -8,6 +8,8 @@ struct SettingsView: View {
                 .tabItem { Label("General", systemImage: "gearshape") }
             ShortcutsSettingsView()
                 .tabItem { Label("Shortcuts", systemImage: "keyboard") }
+            LayoutsSettingsView()
+                .tabItem { Label("Layouts", systemImage: "square.grid.2x2") }
             AboutView()
                 .tabItem { Label("About", systemImage: "info.circle") }
         }

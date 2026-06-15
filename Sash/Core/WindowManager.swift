@@ -90,6 +90,49 @@ final class WindowManager {
         setFrame(targetQuartz, for: window)
     }
 
+    // MARK: - レイアウト用：全ウインドウ列挙
+
+    /// 全アプリ（通常 UI を持つもの）の可視ウインドウをスナップショットして返す。
+    /// 名前付きレイアウト（Phase 8）の保存に使う。最小化・サイズ 0 のウインドウは除外する。
+    func snapshotCurrentWindows() -> [WindowSnapshot] {
+        guard PermissionsManager.shared.isTrusted else { return [] }
+        var result: [WindowSnapshot] = []
+        for app in NSWorkspace.shared.runningApplications {
+            guard app.activationPolicy == .regular,
+                  let bundleID = app.bundleIdentifier else { continue }
+            let appName = app.localizedName ?? bundleID
+            let appElement = AXUIElementCreateApplication(app.processIdentifier)
+
+            var windowsRef: CFTypeRef?
+            guard AXUIElementCopyAttributeValue(appElement, kAXWindowsAttribute as CFString, &windowsRef) == .success,
+                  let windows = windowsRef as? [AXUIElement] else { continue }
+
+            for window in windows {
+                if isMinimized(window) { continue }
+                guard let f = frame(of: window), f.width >= 1, f.height >= 1 else { continue }
+                result.append(WindowSnapshot(bundleIdentifier: bundleID,
+                                             appName: appName,
+                                             title: title(of: window),
+                                             frame: f))
+            }
+        }
+        return result
+    }
+
+    private func title(of window: AXUIElement) -> String {
+        var titleRef: CFTypeRef?
+        AXUIElementCopyAttributeValue(window, kAXTitleAttribute as CFString, &titleRef)
+        return (titleRef as? String) ?? ""
+    }
+
+    private func isMinimized(_ window: AXUIElement) -> Bool {
+        var ref: CFTypeRef?
+        guard AXUIElementCopyAttributeValue(window, kAXMinimizedAttribute as CFString, &ref) == .success else {
+            return false
+        }
+        return (ref as? Bool) == true
+    }
+
     // MARK: - AX ヘルパー
 
     private func focusedWindow() -> AXUIElement? {
