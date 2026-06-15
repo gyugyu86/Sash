@@ -1,12 +1,50 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "A keyboard-first window manager for macOS." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macOS 用のキーボード中心ウインドウマネージャ。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "키보드 중심의 macOS 윈도우 관리자입니다."
+          }
+        }
+      }
+    },
+    "About" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "情報"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "정보"
+          }
+        }
+      }
+    },
     "Accessibility Permission" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "アクセシビリティ権限"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "손쉬운 사용 권한"
           }
         }
       }
@@ -18,6 +56,12 @@
             "state" : "translated",
             "value" : "下半分"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아래쪽 절반"
+          }
         }
       }
     },
@@ -27,6 +71,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "左下"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "왼쪽 아래"
           }
         }
       }
@@ -38,6 +88,12 @@
             "state" : "translated",
             "value" : "右下"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오른쪽 아래"
+          }
         }
       }
     },
@@ -47,6 +103,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "中央 1/3"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "가운데 1/3"
           }
         }
       }
@@ -58,6 +120,12 @@
             "state" : "translated",
             "value" : "サイクル"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "순환"
+          }
         }
       }
     },
@@ -68,15 +136,11 @@
             "state" : "translated",
             "value" : "同じキーの連打で幅を循環"
           }
-        }
-      }
-    },
-    "Pressing the same left/right key again steps the width: 1/2 → 2/3 → 1/3." : {
-      "localizations" : {
-        "ja" : {
+        },
+        "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "左/右キーを連打すると幅が 1/2 → 2/3 → 1/3 と循環します。"
+            "value" : "같은 키를 누르면 너비 순환"
           }
         }
       }
@@ -88,6 +152,12 @@
             "state" : "translated",
             "value" : "余白"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "여백"
+          }
         }
       }
     },
@@ -97,6 +167,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "一般"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "일반"
           }
         }
       }
@@ -108,6 +184,12 @@
             "state" : "translated",
             "value" : "許可する"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "허용…"
+          }
         }
       }
     },
@@ -117,6 +199,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "許可済み"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "허용됨"
           }
         }
       }
@@ -128,6 +216,12 @@
             "state" : "translated",
             "value" : "ログイン時に Sash を起動"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "로그인 시 Sash 실행"
+          }
         }
       }
     },
@@ -137,6 +231,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "左半分"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "왼쪽 절반"
           }
         }
       }
@@ -148,6 +248,12 @@
             "state" : "translated",
             "value" : "左 1/3"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "왼쪽 1/3"
+          }
         }
       }
     },
@@ -157,6 +263,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "左 2/3"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "왼쪽 2/3"
           }
         }
       }
@@ -168,6 +280,12 @@
             "state" : "translated",
             "value" : "最大化"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최대화"
+          }
         }
       }
     },
@@ -177,6 +295,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "次のディスプレイへ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다음 디스플레이로 이동"
           }
         }
       }
@@ -188,6 +312,12 @@
             "state" : "translated",
             "value" : "前のディスプレイへ"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이전 디스플레이로 이동"
+          }
         }
       }
     },
@@ -197,6 +327,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未許可 — ウインドウ操作には許可が必要です"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "허용 안 됨 — 윈도우를 옮기려면 권한이 필요합니다"
+          }
+        }
+      }
+    },
+    "Pressing the same left/right key again steps the width: 1/2 → 2/3 → 1/3." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "左/右キーを連打すると幅が 1/2 → 2/3 → 1/3 と循環します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "같은 왼쪽/오른쪽 키를 다시 누르면 너비가 1/2 → 2/3 → 1/3 순으로 바뀝니다."
           }
         }
       }
@@ -208,6 +360,12 @@
             "state" : "translated",
             "value" : "Sash を終了"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sash 종료"
+          }
         }
       }
     },
@@ -217,6 +375,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "元に戻す"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "복원"
           }
         }
       }
@@ -228,6 +392,12 @@
             "state" : "translated",
             "value" : "右半分"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오른쪽 절반"
+          }
         }
       }
     },
@@ -237,6 +407,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "右 1/3"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오른쪽 1/3"
           }
         }
       }
@@ -248,6 +424,12 @@
             "state" : "translated",
             "value" : "右 2/3"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오른쪽 2/3"
+          }
         }
       }
     },
@@ -255,12 +437,34 @@
       "comment" : "The name of the app.",
       "isCommentAutoGenerated" : true
     },
+    "Sash collects no data." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sash はデータを収集しません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sash는 데이터를 수집하지 않습니다."
+          }
+        }
+      }
+    },
     "Settings…" : {
       "localizations" : {
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "設定…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설정…"
           }
         }
       }
@@ -272,6 +476,12 @@
             "state" : "translated",
             "value" : "ショートカット"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "단축키"
+          }
         }
       }
     },
@@ -281,6 +491,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "配置時にウインドウと画面端のあいだに設ける余白。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "윈도우를 배치할 때 윈도우와 화면 가장자리 사이의 여백입니다."
           }
         }
       }
@@ -292,6 +508,12 @@
             "state" : "translated",
             "value" : "上半分"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "위쪽 절반"
+          }
         }
       }
     },
@@ -301,6 +523,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "左上"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "왼쪽 위"
           }
         }
       }
@@ -312,6 +540,28 @@
             "state" : "translated",
             "value" : "右上"
           }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오른쪽 위"
+          }
+        }
+      }
+    },
+    "Version %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "バージョン %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "버전 %@"
+          }
         }
       }
     },
@@ -321,6 +571,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ウインドウ配置"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "윈도우 배치"
           }
         }
       }

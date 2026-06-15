@@ -18,6 +18,23 @@ enum WindowAction: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
+    /// メニュー・設定でのグループ分け。区切り線（Divider）の単位であり、表示順の単一の真実。
+    /// `Group.allCases` の順（placement → restore → display）でセクションを並べる。
+    enum Group: CaseIterable {
+        case placement   // 半分・四隅・1/3・2/3・最大化
+        case restore     // 配置前のフレームへ戻す
+        case display     // 隣のディスプレイへ移動
+    }
+
+    /// このアクションが属するグループ。
+    var group: Group {
+        switch self {
+        case .restore:                                   return .restore
+        case .moveToPreviousDisplay, .moveToNextDisplay: return .display
+        default:                                         return .placement
+        }
+    }
+
     /// メニューやショートカット一覧に表示するローカライズ済みの名称。
     /// 英語をソースキーとして String Catalog から解決する。
     var localizedTitle: String {
