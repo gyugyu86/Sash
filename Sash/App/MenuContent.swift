@@ -17,20 +17,6 @@ struct MenuContent: View {
 
         Divider()
 
-        // monitor memory（Spike・手動）: 現在の配置を記録／このディスプレイ構成で復元。
-        Button {
-            MonitorMemory.shared.saveCurrentLayout()
-        } label: {
-            Label("Save Window Layout", systemImage: "square.and.arrow.down")
-        }
-        Button {
-            MonitorMemory.shared.restoreCurrentLayout()
-        } label: {
-            Label("Restore Window Layout", systemImage: "square.and.arrow.up")
-        }
-
-        Divider()
-
         SettingsLink {
             Label("Settings…", systemImage: "gearshape")
         }
