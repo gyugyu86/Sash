@@ -14,12 +14,14 @@ has no Dock icon, and collects no data.
 - **Width cycling**: press the same left/right key again to step the width
   `1/2 → 2/3 → 1/3` (toggleable).
 - **Move across displays**: send the front window to the next/previous display,
-  keeping its relative size (proportional to the new screen).
+  or jump it straight to a specific display (up to 6), keeping its relative size.
 - **Gaps**: even spacing between windows and screen edges (0 by default).
 - **In-app language switch**: English / 日本語 / 한국어 / System — switch the
   app's language from Settings without changing your macOS system language.
 - **Menu bar resident** with optional launch at login.
 - **Guided first run** for Accessibility permission.
+- **Lightweight**: a live memory/CPU readout in the About tab shows how little
+  Sash uses.
 
 ## Requirements
 
@@ -61,6 +63,7 @@ switching (`⌃` + arrows). Every shortcut is rebindable in Settings → Shortcu
 | Maximize | `⌃⌥` + ↩ |
 | Restore | `⌃⌥` + ⌫ |
 | Move to previous / next display | `⌃⌥⌘` + ← / → |
+| Move to display 1 / 2 / 3 | `⌃⌥⌘` + 1 / 2 / 3 (4–6 assignable) |
 
 ## Privacy
 
@@ -97,11 +100,17 @@ App Store's mandatory App Sandbox requirement (sandboxed apps can't drive other
 apps over AX). Sash is therefore distributed directly: a Developer ID–signed and
 notarized build via GitHub Releases and Homebrew.
 
+## Known limitations
+
+- Sash positions windows within the **current Space**. It does not create,
+  delete, or switch macOS Spaces (virtual desktops), and can't restore window
+  layouts across multiple Spaces — macOS exposes no public API for that. Use the
+  built-in Mission Control shortcuts (`⌃` + number) to switch Spaces.
+
 ## Roadmap
 
-- **v1.1 — Named layouts (flagship)**: save the arrangement of multiple apps'
-  windows as a named layout and restore it with one shortcut — the main thing
-  Rectangle's free tier and macOS native tiling don't do.
+Sash aims to stay small and predictable rather than match every feature of
+larger tools. No big features are planned; fixes and polish only.
 
 ## License
 
