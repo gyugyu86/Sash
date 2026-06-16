@@ -56,6 +56,8 @@ targets:
         DEVELOPMENT_TEAM: "28T2JHJF87"   # Apple Development: INGYU EUM
         # debug dylib 方式は AX 許可の定着を妨げることがあるため無効化（Xcode 16+）。
         ENABLE_DEBUG_DYLIB: "NO"
+        # 公証の前提: Hardened Runtime を有効化。特別な entitlements は不要（AX は TCC 許可）。
+        ENABLE_HARDENED_RUNTIME: "YES"
         # App Sandbox は付けない（他アプリの AX 操作に必須）。entitlements も付与しない。
     scheme:
       testTargets:

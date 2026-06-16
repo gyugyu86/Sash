@@ -26,8 +26,7 @@ BUILD_DIR="build/release"
 
 cd "$(dirname "$0")/.."
 
-VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' Sash/Info.plist 2>/dev/null || echo 0.0.0)"
-echo "==> Building $APP_NAME $VERSION (Team $TEAM_ID)"
+echo "==> Building $APP_NAME (Team $TEAM_ID)"
 
 rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
@@ -61,7 +60,11 @@ xcodebuild -exportArchive \
   -exportPath "$BUILD_DIR/export"
 
 APP_PATH="$BUILD_DIR/export/$APP_NAME.app"
+# バージョンはビルド設定が解決済みの「成果物の Info.plist」から取得する
+# （リポジトリの Sash/Info.plist は $(MARKETING_VERSION) の未解決リテラルなので使わない）。
+VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$APP_PATH/Contents/Info.plist")"
 ZIP_PATH="$BUILD_DIR/$APP_NAME-$VERSION.zip"
+echo "==> Exported $APP_NAME $VERSION"
 
 # 4. Zip the .app and submit to Apple's notary service (waits for the result).
 ditto -c -k --keepParent "$APP_PATH" "$ZIP_PATH"
