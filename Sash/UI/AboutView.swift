@@ -17,6 +17,11 @@ struct AboutView: View {
         return "\(short) (\(build))"
     }
 
+    // ライブのリソース使用量（About を開いている間だけ 1 秒ごとに更新）。
+    @State private var memoryText = "—"
+    @State private var cpuText = "—"
+    private let ticker = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     var body: some View {
         VStack(spacing: 10) {
             Image(nsImage: NSApplication.shared.applicationIconImage)
@@ -39,6 +44,16 @@ struct AboutView: View {
                 .foregroundStyle(.secondary)
                 .padding(.top, 4)
 
+            // Sash 自身の使用量。「軽い」ことが一目で分かる。値は verbatim、ラベルのみローカライズ。
+            HStack(spacing: 16) {
+                Label { Text("Memory") + Text(verbatim: " \(memoryText)") } icon: { Image(systemName: "memorychip") }
+                Label { Text(verbatim: "CPU \(cpuText)") } icon: { Image(systemName: "cpu") }
+            }
+            .font(.caption)
+            .foregroundStyle(.tertiary)
+            .monospacedDigit()
+            .padding(.top, 6)
+
             Spacer()
 
             Text("Sash collects no data.")
@@ -49,5 +64,17 @@ struct AboutView: View {
         .padding(.top, 48)
         .padding(.bottom, 24)
         .padding(.horizontal, 24)
+        .onAppear(perform: refreshStats)
+        .onReceive(ticker) { _ in refreshStats() }
+    }
+
+    /// 自プロセスのメモリ/CPU を読み取って表示文字列を更新する。
+    private func refreshStats() {
+        if let mb = ProcessStats.memoryFootprintMB() {
+            memoryText = String(format: "%.1f MB", mb)
+        }
+        if let cpu = ProcessStats.cpuUsagePercent() {
+            cpuText = String(format: "%.1f%%", cpu)
+        }
     }
 }

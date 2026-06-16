@@ -513,6 +513,22 @@
         }
       }
     },
+    "Memory" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メモリ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "메모리"
+          }
+        }
+      }
+    },
     "Move to Next Display" : {
       "localizations" : {
         "ja" : {
