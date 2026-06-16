@@ -33,6 +33,70 @@
         }
       }
     },
+    "Per-Display Layouts" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスプレイ別の配置"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "디스플레이별 배치"
+          }
+        }
+      }
+    },
+    "Remember layout per display setup" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスプレイ構成ごとに配置を覚える"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "디스플레이 구성별로 배치 기억"
+          }
+        }
+      }
+    },
+    "When you connect or disconnect a display, Sash restores the layout you last used with that display setup." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスプレイを抜き差しすると、その構成で最後に使っていた配置を Sash が復元します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "디스플레이를 연결하거나 분리하면, 해당 구성에서 마지막으로 사용한 배치를 Sash가 복원합니다."
+          }
+        }
+      }
+    },
+    "Forget Saved Layouts" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存した配置を消去"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "저장된 배치 지우기"
+          }
+        }
+      }
+    },
     "Permission granted" : {
       "localizations" : {
         "ja" : {
@@ -397,6 +461,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "최대화"
+          }
+        }
+      }
+    },
+    "Restore Window Layout" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ウインドウ配置を復元"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "윈도우 배치 복원"
+          }
+        }
+      }
+    },
+    "Save Window Layout" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ウインドウ配置を記録"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "윈도우 배치 저장"
           }
         }
       }

@@ -12,4 +12,5 @@ final class Preferences: ObservableObject {
     @AppStorage("dragSnapEnabled") var dragSnapEnabled = true   // ドラッグスナップの ON/OFF
     @AppStorage("cycleEnabled")    var cycleEnabled = true      // 連続サイクル(1/2→2/3→1/3)の ON/OFF
     @AppStorage("hudEnabled")      var hudEnabled = false       // アクション HUD の ON/OFF
+    @AppStorage("monitorMemoryEnabled") var monitorMemoryEnabled = false // ディスプレイ構成ごとの配置記憶/復元
 }

@@ -119,6 +119,62 @@ final class WindowManager {
         setFrame(targetQuartz, for: window)
     }
 
+    // MARK: - monitor memory（全ウインドウの取得・レイアウト適用）
+
+    /// 全アプリ（通常 UI を持つもの）の可視ウインドウを AX 要素付きで列挙する。
+    /// 最小化・サイズ 0 は除外。保存（snapshot）と復元（applyLayout）の両方が使う。
+    private func currentWindowsWithElements() -> [(snapshot: WindowSnapshot, element: AXUIElement)] {
+        guard PermissionsManager.shared.isTrusted else { return [] }
+        var result: [(WindowSnapshot, AXUIElement)] = []
+        for app in NSWorkspace.shared.runningApplications {
+            guard app.activationPolicy == .regular,
+                  let bundleID = app.bundleIdentifier else { continue }
+            let appElement = AXUIElementCreateApplication(app.processIdentifier)
+            var windowsRef: CFTypeRef?
+            guard AXUIElementCopyAttributeValue(appElement, kAXWindowsAttribute as CFString, &windowsRef) == .success,
+                  let windows = windowsRef as? [AXUIElement] else { continue }
+            for window in windows {
+                if isMinimized(window) { continue }
+                guard let f = frame(of: window), f.width >= 1, f.height >= 1 else { continue }
+                let snap = WindowSnapshot(bundleIdentifier: bundleID, title: title(of: window), frame: f)
+                result.append((snap, window))
+            }
+        }
+        return result
+    }
+
+    /// 現在の全可視ウインドウのスナップショット（保存用）。
+    func snapshotCurrentWindows() -> [WindowSnapshot] {
+        currentWindowsWithElements().map { $0.snapshot }
+    }
+
+    /// 保存レイアウトを現在のウインドウへ照合（`LayoutMatcher`）して frame を適用する（復元）。
+    func applyLayout(_ saved: [WindowSnapshot]) {
+        guard PermissionsManager.shared.isTrusted else {
+            PermissionsManager.shared.requestAccess()
+            return
+        }
+        let live = currentWindowsWithElements()
+        let plan = LayoutMatcher.plan(saved: saved, current: live.map { $0.snapshot })
+        for step in plan {
+            setFrame(step.frame, for: live[step.currentIndex].element)
+        }
+    }
+
+    private func title(of window: AXUIElement) -> String {
+        var titleRef: CFTypeRef?
+        AXUIElementCopyAttributeValue(window, kAXTitleAttribute as CFString, &titleRef)
+        return (titleRef as? String) ?? ""
+    }
+
+    private func isMinimized(_ window: AXUIElement) -> Bool {
+        var ref: CFTypeRef?
+        guard AXUIElementCopyAttributeValue(window, kAXMinimizedAttribute as CFString, &ref) == .success else {
+            return false
+        }
+        return (ref as? Bool) == true
+    }
+
     // MARK: - AX ヘルパー
 
     private func focusedWindow() -> AXUIElement? {
