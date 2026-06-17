@@ -629,6 +629,38 @@
         }
       }
     },
+    "Shortcuts keep working when the icon is hidden. Reopen Sash from Finder to get back to Settings." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アイコンを非表示にしてもショートカットは有効です。設定に戻すには Finder から Sash を再度開いてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아이콘을 숨겨도 단축키는 계속 작동합니다. 설정으로 돌아가려면 Finder에서 Sash를 다시 여세요."
+          }
+        }
+      }
+    },
+    "Show menu bar icon" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メニューバーにアイコンを表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "메뉴 막대에 아이콘 표시"
+          }
+        }
+      }
+    },
     "Shortcuts" : {
       "localizations" : {
         "ja" : {
