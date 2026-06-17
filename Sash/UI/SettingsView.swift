@@ -11,6 +11,8 @@ struct SettingsView: View {
             AboutView()
                 .tabItem { Label("About", systemImage: "info.circle") }
         }
-        .frame(width: 480, height: 540)
+        // 正方形に近い大きめの固定サイズ。General タブ（6セクション）をスクロール無しで全表示する。
+        // Shortcuts は項目が多いのでスクロールが残る／About は余白が増えるが許容。
+        .frame(width: 700, height: 700)
     }
 }
