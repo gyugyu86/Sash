@@ -24,6 +24,8 @@ struct AboutView: View {
 
     var body: some View {
         VStack(spacing: 10) {
+            Spacer()
+
             Image(nsImage: NSApplication.shared.applicationIconImage)
                 .resizable()
                 .frame(width: 96, height: 96)
@@ -54,15 +56,17 @@ struct AboutView: View {
             .monospacedDigit()
             .padding(.top, 6)
 
-            Spacer()
-
             Text("Sash collects no data.")
                 .font(.footnote)
                 .foregroundStyle(.tertiary)
+                .padding(.top, 10)
+
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.top, 48)
-        .padding(.bottom, 24)
+        // 下を多めに空けて、中央グループをやや上に寄せる（ロゴが中央のやや上、文字が中央付近）。
+        .padding(.top, 24)
+        .padding(.bottom, 100)
         .padding(.horizontal, 24)
         .onAppear(perform: refreshStats)
         .onReceive(ticker) { _ in refreshStats() }
