@@ -22,6 +22,14 @@ struct MenuContent: View {
         }
         .keyboardShortcut(",", modifiers: .command)
 
+        Button {
+            if let url = URL(string: "https://github.com/gyugyu86/Sash/issues") {
+                NSWorkspace.shared.open(url)
+            }
+        } label: {
+            Label("Report an Issue…", systemImage: "exclamationmark.bubble")
+        }
+
         Button("Quit Sash") {
             NSApplication.shared.terminate(nil)
         }

@@ -513,6 +513,22 @@
         }
       }
     },
+    "Report an Issue…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "問題を報告…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "문제 신고…"
+          }
+        }
+      }
+    },
     "Restore" : {
       "localizations" : {
         "ja" : {
