@@ -6,7 +6,6 @@ struct GeneralSettingsView: View {
     @State private var hasPermission = PermissionsManager.shared.isTrusted
     @AppStorage("gap") private var gap: Double = 0              // Preferences.gap と同じ UserDefaults キー
     @AppStorage("cycleEnabled") private var cycleEnabled = true // Preferences.cycleEnabled と同じキー
-    @AppStorage("showMenuBarIcon") private var showMenuBarIcon = true // Preferences と同じキー
     @AppStorage("autoCheckUpdates") private var autoCheckUpdates = false // Preferences と同じキー
     @State private var updateState: UpdateState = .idle
     @EnvironmentObject private var languageManager: LanguageManager
@@ -18,13 +17,6 @@ struct GeneralSettingsView: View {
                     .onChange(of: launchAtLogin) { _, newValue in
                         try? LoginItem.setEnabled(newValue)
                     }
-            }
-
-            Section {
-                Toggle("Show menu bar icon", isOn: $showMenuBarIcon)
-                Text("Shortcuts keep working when the icon is hidden. Reopen Sash from Finder to bring the icon back.")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
             }
 
             Section {

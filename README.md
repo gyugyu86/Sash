@@ -18,7 +18,7 @@ has no Dock icon, and collects no data.
 - **Gaps**: even spacing between windows and screen edges (0 by default).
 - **In-app language switch**: English / 日本語 / 한국어 / 简体中文 / System — switch
   the app's language from Settings without changing your macOS system language.
-- **Menu bar resident** (the icon can be hidden) with optional launch at login.
+- **Menu bar resident** with optional launch at login.
 - **Guided first run** for Accessibility permission.
 - **Lightweight**: a live memory/CPU readout in the About tab shows how little
   Sash uses.

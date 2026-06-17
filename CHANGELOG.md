@@ -9,8 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Simplified Chinese (简体中文) localization, selectable in the in-app language
   switch (now English / 日本語 / 한국어 / 简体中文 / System).
-- "Show menu bar icon" toggle — hide the menu bar icon (global shortcuts keep
-  working; reopening Sash from Finder brings the icon back).
 - Optional, off-by-default update check. When enabled it fetches only the latest
   version number from GitHub (no personal data sent); a manual "Check for
   Updates…" is also available in Settings → General.

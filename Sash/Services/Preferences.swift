@@ -12,7 +12,6 @@ final class Preferences: ObservableObject {
     @AppStorage("dragSnapEnabled") var dragSnapEnabled = true   // ドラッグスナップの ON/OFF
     @AppStorage("cycleEnabled")    var cycleEnabled = true      // 連続サイクル(1/2→2/3→1/3)の ON/OFF
     @AppStorage("hudEnabled")      var hudEnabled = false       // アクション HUD の ON/OFF
-    @AppStorage("showMenuBarIcon") var showMenuBarIcon = true    // メニューバーアイコンの表示/非表示
     @AppStorage("autoCheckUpdates") var autoCheckUpdates = false // 起動時の自動アップデート確認（オプトイン）
     @AppStorage("lastUpdateCheck")  var lastUpdateCheck: Double = 0 // 最終確認時刻（throttle 用・epoch秒）
 }
