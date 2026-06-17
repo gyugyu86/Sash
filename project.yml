@@ -19,8 +19,8 @@ packages:
 settings:
   base:
     SWIFT_VERSION: "5.0"           # 同梱コードは Swift 5。Swift 6 の厳格並行性は段階導入とする。
-    MARKETING_VERSION: "1.0"
-    CURRENT_PROJECT_VERSION: "1"
+    MARKETING_VERSION: "1.1"
+    CURRENT_PROJECT_VERSION: "2"
     CODE_SIGN_STYLE: Automatic      # 署名チームは Xcode 側で各自選択（人間ゲート）。
     SWIFT_EMIT_LOC_STRINGS: "YES"   # Text()/String(localized:) を String Catalog へ抽出。
 

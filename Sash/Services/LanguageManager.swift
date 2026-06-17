@@ -5,6 +5,7 @@ import SwiftUI
 /// rawValue は `.lproj` 名・UserDefaults 保存値・`Locale` 識別子を兼ねる。
 enum AppLanguage: String, CaseIterable, Identifiable {
     case system, en, ja, ko
+    case zhHans = "zh-Hans"
 
     var id: String { rawValue }
 
@@ -16,6 +17,7 @@ enum AppLanguage: String, CaseIterable, Identifiable {
         case .en:     return Text(verbatim: "English")
         case .ja:     return Text(verbatim: "日本語")
         case .ko:     return Text(verbatim: "한국어")
+        case .zhHans: return Text(verbatim: "简体中文")
         }
     }
 }

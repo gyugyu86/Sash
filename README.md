@@ -4,8 +4,8 @@ A keyboard-first window manager for macOS. Snap, resize, and move windows with
 a few shortcuts — fast, quiet, and out of your way. Sash lives in the menu bar,
 has no Dock icon, and collects no data.
 
-> Status: pre-release (v1.0). Built from scratch as a modern, friendlier
-> successor to ShiftIt; window-move logic references [Rectangle](https://github.com/rxhanson/Rectangle) (MIT).
+> Built from scratch as a modern, friendlier successor to ShiftIt; window-move
+> logic references [Rectangle](https://github.com/rxhanson/Rectangle) (MIT).
 
 ## Features
 
@@ -16,12 +16,14 @@ has no Dock icon, and collects no data.
 - **Move across displays**: send the front window to the next/previous display,
   or jump it straight to a specific display (up to 6), keeping its relative size.
 - **Gaps**: even spacing between windows and screen edges (0 by default).
-- **In-app language switch**: English / 日本語 / 한국어 / System — switch the
-  app's language from Settings without changing your macOS system language.
+- **In-app language switch**: English / 日本語 / 한국어 / 简体中文 / System — switch
+  the app's language from Settings without changing your macOS system language.
 - **Menu bar resident** with optional launch at login.
 - **Guided first run** for Accessibility permission.
 - **Lightweight**: a live memory/CPU readout in the About tab shows how little
   Sash uses.
+- **Optional update check**: off by default; when enabled, fetches only the
+  latest version number from GitHub (no personal data sent).
 
 ## Requirements
 
@@ -72,9 +74,10 @@ switching (`⌃` + arrows). Every shortcut is rebindable in Settings → Shortcu
 
 ## Privacy
 
-Sash collects no data. It makes no network requests, has no analytics, and
-stores only your preferences locally. The Accessibility permission is used
-solely to position windows.
+Sash collects no data, has no analytics, and stores only your preferences
+locally. By default it makes no network requests; the optional update check
+(off by default) fetches only the latest version number from GitHub when you
+turn it on. The Accessibility permission is used solely to position windows.
 
 ## Building from source
 
