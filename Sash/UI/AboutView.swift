@@ -64,7 +64,9 @@ struct AboutView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.vertical, 24)
+        // 下を多めに空けて、中央グループをやや上に寄せる（ロゴが中央のやや上、文字が中央付近）。
+        .padding(.top, 24)
+        .padding(.bottom, 100)
         .padding(.horizontal, 24)
         .onAppear(perform: refreshStats)
         .onReceive(ticker) { _ in refreshStats() }

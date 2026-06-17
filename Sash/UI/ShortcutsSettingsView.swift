@@ -15,7 +15,7 @@ struct ShortcutsSettingsView: View {
     var body: some View {
         ScrollView {
             GroupBox("Window Placement") {
-                Grid(alignment: .leading, horizontalSpacing: 32, verticalSpacing: 12) {
+                Grid(alignment: .leading, horizontalSpacing: 32, verticalSpacing: 24) {
                     ForEach(Array(rows.enumerated()), id: \.offset) { _, pair in
                         GridRow {
                             cell(pair[0])
