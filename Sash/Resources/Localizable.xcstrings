@@ -1,6 +1,106 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "A new version is available: %@" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "新しいバージョンがあります: %@" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "새 버전이 있습니다: %@" }
+        }
+      }
+    },
+    "Automatically check for updates" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "自動的にアップデートを確認" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "자동으로 업데이트 확인" }
+        }
+      }
+    },
+    "Check for Updates…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "アップデートを確認…" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "업데이트 확인…" }
+        }
+      }
+    },
+    "Checking…" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "確認中…" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "확인 중…" }
+        }
+      }
+    },
+    "Couldn't check for updates." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "アップデートを確認できませんでした。" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "업데이트를 확인할 수 없습니다." }
+        }
+      }
+    },
+    "Download" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "ダウンロード" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "다운로드" }
+        }
+      }
+    },
+    "Later" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "後で" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "나중에" }
+        }
+      }
+    },
+    "Updates" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "アップデート" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "업데이트" }
+        }
+      }
+    },
+    "When on, Sash contacts GitHub to fetch only the latest version number — no personal data is sent. Off by default." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "オンにすると、最新バージョン番号のみを GitHub から取得します（個人データは送信しません）。既定はオフです。" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "켜면 최신 버전 번호만 GitHub에서 가져옵니다(개인 데이터는 전송하지 않습니다). 기본값은 꺼짐입니다." }
+        }
+      }
+    },
+    "You're up to date." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : { "state" : "translated", "value" : "最新です。" }
+        },
+        "ko" : {
+          "stringUnit" : { "state" : "translated", "value" : "최신 버전입니다." }
+        }
+      }
+    },
     "Find Sash in the list and turn it on. This window closes automatically once enabled." : {
       "localizations" : {
         "ja" : {
