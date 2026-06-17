@@ -4,100 +4,220 @@
     "A new version is available: %@" : {
       "localizations" : {
         "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "新しいバージョンがあります: %@" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいバージョンがあります: %@"
+          }
         },
         "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "새 버전이 있습니다: %@" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 버전이 있습니다: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有新版本可用：%@"
+          }
         }
       }
     },
     "Automatically check for updates" : {
       "localizations" : {
         "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "自動的にアップデートを確認" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自動的にアップデートを確認"
+          }
         },
         "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "자동으로 업데이트 확인" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "자동으로 업데이트 확인"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动检查更新"
+          }
         }
       }
     },
     "Check for Updates…" : {
       "localizations" : {
         "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "アップデートを確認…" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アップデートを確認…"
+          }
         },
         "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "업데이트 확인…" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "업데이트 확인…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "检查更新…"
+          }
         }
       }
     },
     "Checking…" : {
       "localizations" : {
         "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "確認中…" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "確認中…"
+          }
         },
         "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "확인 중…" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "확인 중…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在检查…"
+          }
         }
       }
     },
     "Couldn't check for updates." : {
       "localizations" : {
         "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "アップデートを確認できませんでした。" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アップデートを確認できませんでした。"
+          }
         },
         "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "업데이트를 확인할 수 없습니다." }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "업데이트를 확인할 수 없습니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法检查更新。"
+          }
         }
       }
     },
     "Download" : {
       "localizations" : {
         "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "ダウンロード" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダウンロード"
+          }
         },
         "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "다운로드" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다운로드"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下载"
+          }
         }
       }
     },
     "Later" : {
       "localizations" : {
         "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "後で" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "後で"
+          }
         },
         "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "나중에" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "나중에"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "稍后"
+          }
         }
       }
     },
     "Updates" : {
       "localizations" : {
         "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "アップデート" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アップデート"
+          }
         },
         "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "업데이트" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "업데이트"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新"
+          }
         }
       }
     },
     "When on, Sash contacts GitHub to fetch only the latest version number — no personal data is sent. Off by default." : {
       "localizations" : {
         "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "オンにすると、最新バージョン番号のみを GitHub から取得します（個人データは送信しません）。既定はオフです。" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンにすると、最新バージョン番号のみを GitHub から取得します（個人データは送信しません）。既定はオフです。"
+          }
         },
         "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "켜면 최신 버전 번호만 GitHub에서 가져옵니다(개인 데이터는 전송하지 않습니다). 기본값은 꺼짐입니다." }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "켜면 최신 버전 번호만 GitHub에서 가져옵니다(개인 데이터는 전송하지 않습니다). 기본값은 꺼짐입니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开启后，Sash 会连接 GitHub 以获取最新版本号；不会发送任何个人数据。默认关闭。"
+          }
         }
       }
     },
     "You're up to date." : {
       "localizations" : {
         "ja" : {
-          "stringUnit" : { "state" : "translated", "value" : "最新です。" }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最新です。"
+          }
         },
         "ko" : {
-          "stringUnit" : { "state" : "translated", "value" : "최신 버전입니다." }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최신 버전입니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已是最新版本。"
+          }
         }
       }
     },
@@ -113,6 +233,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "목록에서 Sash를 찾아 켜 주세요. 허용되면 이 창은 자동으로 닫힙니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在列表中找到 Sash 并开启它。授权后此窗口会自动关闭。"
           }
         }
       }
@@ -130,6 +256,12 @@
             "state" : "translated",
             "value" : "손쉬운 사용 설정 열기…"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "打开“辅助功能”设置…"
+          }
         }
       }
     },
@@ -145,6 +277,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "권한이 허용되었습니다"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "权限已授予"
           }
         }
       }
@@ -162,6 +300,12 @@
             "state" : "translated",
             "value" : "Sash는 키보드로 윈도우를 정리합니다. 다른 앱의 윈도우를 옮기려면 손쉬운 사용 권한이 필요합니다."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sash 用键盘排列你的窗口。要移动其他 App 的窗口，需要辅助功能权限。"
+          }
         }
       }
     },
@@ -177,6 +321,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "권한을 기다리는 중…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在等待授权…"
           }
         }
       }
@@ -194,6 +344,12 @@
             "state" : "translated",
             "value" : "Sash에 오신 것을 환영합니다"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "欢迎使用 Sash"
+          }
         }
       }
     },
@@ -209,6 +365,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "키보드 중심의 macOS 윈도우 관리자입니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "以键盘为中心的 macOS 窗口管理器。"
           }
         }
       }
@@ -226,6 +388,12 @@
             "state" : "translated",
             "value" : "정보"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关于"
+          }
         }
       }
     },
@@ -241,6 +409,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "손쉬운 사용 권한"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "辅助功能权限"
           }
         }
       }
@@ -258,6 +432,12 @@
             "state" : "translated",
             "value" : "아래쪽 절반"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下半屏"
+          }
         }
       }
     },
@@ -273,6 +453,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "왼쪽 아래"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "左下"
           }
         }
       }
@@ -290,6 +476,12 @@
             "state" : "translated",
             "value" : "오른쪽 아래"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "右下"
+          }
         }
       }
     },
@@ -305,6 +497,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "가운데 1/3"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中间三分之一"
           }
         }
       }
@@ -322,6 +520,12 @@
             "state" : "translated",
             "value" : "순환"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "循环"
+          }
         }
       }
     },
@@ -337,6 +541,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "같은 키를 누르면 너비 순환"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按相同按键循环切换宽度"
           }
         }
       }
@@ -354,6 +564,12 @@
             "state" : "translated",
             "value" : "여백"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "间距"
+          }
         }
       }
     },
@@ -369,6 +585,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "일반"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通用"
           }
         }
       }
@@ -386,6 +608,12 @@
             "state" : "translated",
             "value" : "허용…"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "授权…"
+          }
         }
       }
     },
@@ -401,6 +629,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "허용됨"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已授权"
           }
         }
       }
@@ -418,6 +652,12 @@
             "state" : "translated",
             "value" : "언어"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "语言"
+          }
         }
       }
     },
@@ -433,6 +673,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "로그인 시 Sash 실행"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登录时启动 Sash"
           }
         }
       }
@@ -450,6 +696,12 @@
             "state" : "translated",
             "value" : "왼쪽 절반"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "左半屏"
+          }
         }
       }
     },
@@ -465,6 +717,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "왼쪽 1/3"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "左三分之一"
           }
         }
       }
@@ -482,6 +740,12 @@
             "state" : "translated",
             "value" : "왼쪽 2/3"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "左三分之二"
+          }
         }
       }
     },
@@ -497,6 +761,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "최대화"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最大化"
           }
         }
       }
@@ -514,6 +784,12 @@
             "state" : "translated",
             "value" : "디스플레이 %lld(으)로 이동"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移到显示器 %lld"
+          }
         }
       }
     },
@@ -529,6 +805,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "메모리"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "内存"
           }
         }
       }
@@ -546,6 +828,12 @@
             "state" : "translated",
             "value" : "다음 디스플레이로 이동"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移到下一个显示器"
+          }
         }
       }
     },
@@ -561,6 +849,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "이전 디스플레이로 이동"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移到上一个显示器"
           }
         }
       }
@@ -578,6 +872,12 @@
             "state" : "translated",
             "value" : "허용 안 됨 — 윈도우를 옮기려면 권한이 필요합니다"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未授权 — Sash 需要权限才能移动窗口"
+          }
         }
       }
     },
@@ -593,6 +893,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "같은 왼쪽/오른쪽 키를 다시 누르면 너비가 1/2 → 2/3 → 1/3 순으로 바뀝니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再次按相同的左/右按键会切换宽度：1/2 → 2/3 → 1/3。"
           }
         }
       }
@@ -610,6 +916,12 @@
             "state" : "translated",
             "value" : "Sash 종료"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "退出 Sash"
+          }
         }
       }
     },
@@ -625,6 +937,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "문제 신고…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "报告问题…"
           }
         }
       }
@@ -642,6 +960,12 @@
             "state" : "translated",
             "value" : "복원"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "还原"
+          }
         }
       }
     },
@@ -657,6 +981,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오른쪽 절반"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "右半屏"
           }
         }
       }
@@ -674,6 +1004,12 @@
             "state" : "translated",
             "value" : "오른쪽 1/3"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "右三分之一"
+          }
         }
       }
     },
@@ -689,6 +1025,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오른쪽 2/3"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "右三分之二"
           }
         }
       }
@@ -710,6 +1052,12 @@
             "state" : "translated",
             "value" : "Sash는 데이터를 수집하지 않습니다."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sash 不收集任何数据。"
+          }
         }
       }
     },
@@ -725,6 +1073,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "설정…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置…"
           }
         }
       }
@@ -742,6 +1096,12 @@
             "state" : "translated",
             "value" : "아이콘을 숨겨도 단축키는 계속 작동합니다. 설정으로 돌아가려면 Finder에서 Sash를 다시 여세요."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏图标后快捷键仍然有效。要返回设置，请从访达重新打开 Sash。"
+          }
         }
       }
     },
@@ -757,6 +1117,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "메뉴 막대에 아이콘 표시"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在菜单栏显示图标"
           }
         }
       }
@@ -774,6 +1140,12 @@
             "state" : "translated",
             "value" : "단축키"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快捷键"
+          }
         }
       }
     },
@@ -789,6 +1161,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "윈도우를 배치할 때 윈도우와 화면 가장자리 사이의 여백입니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "排列窗口时，窗口与屏幕边缘之间的间距。"
           }
         }
       }
@@ -806,6 +1184,12 @@
             "state" : "translated",
             "value" : "시스템"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "系统"
+          }
         }
       }
     },
@@ -821,6 +1205,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "위쪽 절반"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上半屏"
           }
         }
       }
@@ -838,6 +1228,12 @@
             "state" : "translated",
             "value" : "왼쪽 위"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "左上"
+          }
         }
       }
     },
@@ -853,6 +1249,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오른쪽 위"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "右上"
           }
         }
       }
@@ -870,6 +1272,12 @@
             "state" : "translated",
             "value" : "버전 %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "版本 %@"
+          }
         }
       }
     },
@@ -885,6 +1293,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "윈도우 배치"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "窗口排列"
           }
         }
       }
