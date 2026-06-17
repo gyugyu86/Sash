@@ -24,6 +24,8 @@ struct AboutView: View {
 
     var body: some View {
         VStack(spacing: 10) {
+            Spacer()
+
             Image(nsImage: NSApplication.shared.applicationIconImage)
                 .resizable()
                 .frame(width: 96, height: 96)
@@ -61,8 +63,7 @@ struct AboutView: View {
                 .foregroundStyle(.tertiary)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.top, 48)
-        .padding(.bottom, 24)
+        .padding(.vertical, 24)
         .padding(.horizontal, 24)
         .onAppear(perform: refreshStats)
         .onReceive(ticker) { _ in refreshStats() }
