@@ -42,6 +42,11 @@ Grab the latest signed & notarized build from
 [Releases](https://github.com/gyugyu86/Sash/releases), unzip, and move
 `Sash.app` to `/Applications`.
 
+On first launch macOS shows a one-time "Sash is an app downloaded from the
+Internet — are you sure you want to open it?" prompt — click **Open**. It even
+says Apple checked it for malware and found none (that's the notarization). It
+won't appear again, and Homebrew installs skip it entirely.
+
 ## First launch
 
 Sash needs **Accessibility** permission to move other apps' windows. On first
