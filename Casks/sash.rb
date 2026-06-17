@@ -9,8 +9,8 @@
 #   - sha256:  shasum -a 256 Sash-<version>.zip
 #   - url:     the GitHub Release asset URL (auto-derived from version below)
 cask "sash" do
-  version "1.0"
-  sha256 "219c496d343b6573d89290c28da3340f8587e5ba216cec6b5a48f393ca50fdab"
+  version "1.1"
+  sha256 "9b57969b7cded1eb404062006b45fe240eb15ef807e49c66e06ec3b4d03fa32a"
 
   url "https://github.com/gyugyu86/Sash/releases/download/v#{version}/Sash-#{version}.zip"
   name "Sash"
