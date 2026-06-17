@@ -56,11 +56,12 @@ struct AboutView: View {
             .monospacedDigit()
             .padding(.top, 6)
 
-            Spacer()
-
             Text("Sash collects no data.")
                 .font(.footnote)
                 .foregroundStyle(.tertiary)
+                .padding(.top, 10)
+
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.vertical, 24)
