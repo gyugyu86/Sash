@@ -41,10 +41,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    /// アプリを再度開いた（Finder/Spotlight 等）ときに設定ウインドウを表示する。
-    /// メニューバーアイコンを非表示にしているとき、設定へ戻る経路になる。
+    /// アプリを再度開いた（Finder/Spotlight 等）ときの復帰経路。
+    /// メニューバーアイコンを非表示にしている場合は**アイコンを復帰**させる。
+    /// （設定ウインドウのプログラム表示は macOS 14+ で非推奨・不安定なため使わない。
+    ///  アイコンが戻れば、そこから設定・終了にアクセスできる。）
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+        if !Preferences.shared.showMenuBarIcon {
+            Preferences.shared.showMenuBarIcon = true
+        }
+        NSApp.activate(ignoringOtherApps: true)
         return true
     }
 }

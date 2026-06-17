@@ -1083,28 +1083,6 @@
         }
       }
     },
-    "Shortcuts keep working when the icon is hidden. Reopen Sash from Finder to get back to Settings." : {
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "アイコンを非表示にしてもショートカットは有効です。設定に戻すには Finder から Sash を再度開いてください。"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "아이콘을 숨겨도 단축키는 계속 작동합니다. 설정으로 돌아가려면 Finder에서 Sash를 다시 여세요."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "隐藏图标后快捷键仍然有效。要返回设置，请从访达重新打开 Sash。"
-          }
-        }
-      }
-    },
     "Show menu bar icon" : {
       "localizations" : {
         "ja" : {
@@ -1299,6 +1277,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "窗口排列"
+          }
+        }
+      }
+    },
+    "Shortcuts keep working when the icon is hidden. Reopen Sash from Finder to bring the icon back." : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アイコンを非表示にしてもショートカットは有効です。Finder から Sash を再度開くとアイコンが戻ります。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아이콘을 숨겨도 단축키는 계속 작동합니다. Finder에서 Sash를 다시 열면 아이콘이 다시 표시됩니다."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐藏图标后快捷键仍然有效。从访达重新打开 Sash 即可让图标重新出现。"
           }
         }
       }

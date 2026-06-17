@@ -22,7 +22,7 @@ struct GeneralSettingsView: View {
 
             Section {
                 Toggle("Show menu bar icon", isOn: $showMenuBarIcon)
-                Text("Shortcuts keep working when the icon is hidden. Reopen Sash from Finder to get back to Settings.")
+                Text("Shortcuts keep working when the icon is hidden. Reopen Sash from Finder to bring the icon back.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
