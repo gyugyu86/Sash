@@ -4,7 +4,19 @@ All notable changes to Sash are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0] — Unreleased
+## [1.1] — Unreleased
+
+### Added
+- Simplified Chinese (简体中文) localization, selectable in the in-app language
+  switch (now English / 日本語 / 한국어 / 简体中文 / System).
+- "Show menu bar icon" toggle — hide the menu bar icon (global shortcuts keep
+  working; reopening Sash brings back Settings).
+- Optional, off-by-default update check. When enabled it fetches only the latest
+  version number from GitHub (no personal data sent); a manual "Check for
+  Updates…" is also available in Settings → General.
+- "Report an Issue…" menu item that opens the GitHub issues page.
+
+## [1.0] — 2026-06-17
 
 First public release.
 
