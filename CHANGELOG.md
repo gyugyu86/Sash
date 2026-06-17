@@ -4,7 +4,14 @@ All notable changes to Sash are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.1] — Unreleased
+## [1.1.1] — 2026-06-18
+
+### Changed
+- Settings window polish: enlarged to a near-square so the General tab fits
+  without scrolling; the Shortcuts tab is now two columns (name left / shortcut
+  right) with a center divider; the About tab content is vertically centered.
+
+## [1.1] — 2026-06-17
 
 ### Added
 - Simplified Chinese (简体中文) localization, selectable in the in-app language
